@@ -53,8 +53,8 @@ function doThing()
    document.getElementById("result").innerHTML = t;
 }
 
-/*function addMore()
+function addMore(x)
 {
    h++;
    document.getElementById("addStuff").innerHTML = document.getElementById("addStuff").innerHTML + "<br><h3><a id='xd"+h+"'>1</a>d<a id='dx"+h+"'>20</a> +<a id='c"+h+"'>0</a></h3><h4><a onclick='addDice(1,"+h+");'>+1</a>  <a onclick='addDice(-1,"+h+");'>-1</a> | <a onclick='addFace(1,"+h+");'>+1</a>  <a onclick='addFace(-1,"+h+");'>-1</a> | <a onclick='addMod(1,"+h+");'>+1</a>  <a onclick='addMod(-1,"+h+");'>-1</a></h4><br>"
-}*/
+}
