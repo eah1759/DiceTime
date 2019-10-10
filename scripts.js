@@ -53,8 +53,35 @@ function doThing()
    document.getElementById("result").innerHTML = t;
 }
 
-/*function addMore()
+function addMore(x)
 {
-   h++;
-   document.getElementById("addStuff").innerHTML = document.getElementById("addStuff").innerHTML + "<br><h3><a id='xd"+h+"'>1</a>d<a id='dx"+h+"'>20</a> +<a id='c"+h+"'>0</a></h3><h4><a onclick='addDice(1,"+h+");'>+1</a>  <a onclick='addDice(-1,"+h+");'>-1</a> | <a onclick='addFace(1,"+h+");'>+1</a>  <a onclick='addFace(-1,"+h+");'>-1</a> | <a onclick='addMod(1,"+h+");'>+1</a>  <a onclick='addMod(-1,"+h+");'>-1</a></h4><br>"
-}*/
+   switch(x)
+   {
+      case 1: h++; document.getElementById("addStuff").innerHTML = document.getElementById("addStuff").innerHTML + "<!----><br><h3><a id='xd"+h+"'>1</a>d<a id='dx"+h+"'>20</a> +<a id='c"+h+"'>0</a></h3><h4><a onclick='addDice(1,"+h+");'>+1</a>  <a onclick='addDice(-1,"+h+");'>-1</a> | <a onclick='addFace(1,"+h+");'>+1</a>  <a onclick='addFace(-1,"+h+");'>-1</a> | <a onclick='addMod(1,"+h+");'>+1</a>  <a onclick='addMod(-1,"+h+");'>-1</a></h4><br>"; break;
+      case -1: deletMore(); break;
+      default: alert("...how?!");
+   }
+   document.getElementById("re").innerHTML = h;
+}
+
+function deletMore()
+{
+   if(h>1)
+   {
+      h--;
+      var splitTime = document.getElementById("addStuff").innerHTML.split('<!---->');
+      var out = splitTime[0];
+      for(var i = 1; i < h; i++)
+      {
+         out = out + "<!---->" + splitTime[i];
+      }
+      if(h>1)
+      {
+         document.getElementById("addStuff").innerHTML = out;
+      }
+      else
+      {
+         document.getElementById("addStuff").innerHTML = "";
+      }
+   }
+}
