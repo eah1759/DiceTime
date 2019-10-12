@@ -1,87 +1,90 @@
-var h = 1;//addMore
+var h = [1,1,1,1];//addMore
 
-function addDice(x,a)
+function addDice(x,a,q)
 {
-   var d = parseInt(document.getElementById("xd"+a).innerHTML, 10);
+   var d = parseInt(document.getElementById(q+"xd"+a).innerHTML, 10);
    switch(x)
    {
       case 1: d++;break;
       case -1: if(d>1){d--;}break;
       default: alert("...how?");
    }
-   document.getElementById("xd"+a).innerHTML = d;
+   document.getElementById(q+"xd"+a).innerHTML = d;
 }
 
-function addFace(x,a)
+function addFace(x,a,q)
 {
-   var f = parseInt(document.getElementById("dx"+a).innerHTML, 10);
+   var f = parseInt(document.getElementById(q+"dx"+a).innerHTML, 10);
    switch(x)
    {
       case 1: f++;break;
       case -1: if(f>1){f--;}break;
       default: alert("...how?");
    }
-   document.getElementById("dx"+a).innerHTML = f;
+   document.getElementById(q+"dx"+a).innerHTML = f;
 }
 
-function addMod(x,a)
+function addMod(x,a,q)
 {
-   var m = parseInt(document.getElementById("c"+a).innerHTML, 10);
+   var m = parseInt(document.getElementById(q+"c"+a).innerHTML, 10);
    switch(x)
    {
       case 1: m++;break;
       case -1: m--;break;
       default: alert("...how?");
    }
-   document.getElementById("c"+a).innerHTML = m;
+   document.getElementById(q+"c"+a).innerHTML = m;
 }
 
-function doThing()
+function doThing(q)
 {
    var t = 0;
-   for(var a = 1; a <= h; a++)
+   for(var a = 1; a <= h[q-1]; a++)
    {
-      var d = parseInt(document.getElementById("xd"+a).innerHTML, 10);
-      var f = parseInt(document.getElementById("dx"+a).innerHTML, 10);
-      var m = parseInt(document.getElementById("c"+a).innerHTML, 10);
+      var temp = 0;
+      var d = parseInt(document.getElementById(q+"xd"+a).innerHTML, 10);
+      var f = parseInt(document.getElementById(q+"dx"+a).innerHTML, 10);
+      var m = parseInt(document.getElementById(q+"c"+a).innerHTML, 10);
       for(var i = 0; i < d; i++)
       {
-         t = t + Math.trunc((Math.random()*f)+1);
+         temp = temp + Math.trunc((Math.random()*f)+1);
       }
-      t = t + m;
+      temp = temp + m;
+      document.getElementById(q+"t"+a).innerHTML = "|  "+temp;
+      t = t + temp;
    }
-   document.getElementById("result").innerHTML = t;
+   document.getElementById(q+"result").innerHTML = t;
 }
 
-function addMore(x)
+function addMore(x,q)
 {
    switch(x)
    {
-      case 1: h++; document.getElementById("addStuff").innerHTML = document.getElementById("addStuff").innerHTML + "<!----><br><h3><a id='xd"+h+"'>1</a>d<a id='dx"+h+"'>20</a> +<a id='c"+h+"'>0</a></h3><h4><a onclick='addDice(1,"+h+");'>+1</a>  <a onclick='addDice(-1,"+h+");'>-1</a> | <a onclick='addFace(1,"+h+");'>+1</a>  <a onclick='addFace(-1,"+h+");'>-1</a> | <a onclick='addMod(1,"+h+");'>+1</a>  <a onclick='addMod(-1,"+h+");'>-1</a></h4><br>"; break;
-      case -1: deletMore(); break;
+      case 1: h[q-1]++; document.getElementById(q+"addStuff").innerHTML = document.getElementById(q+"addStuff").innerHTML + "<!----><br><h3><a id='"+q+"xd"+h[q-1]+"'>1</a>d<a id='"+q+"dx"+h[q-1]+"'>20</a> +<a id='"+q+"c"+h[q-1]+"'>0</a>  <a id='"+q+"t"+h[q-1]+"'></a></h3><h4><a onclick='addDice(1,"+h[q-1]+","+q+");'>+1</a>  <a onclick='addDice(-1,"+h[q-1]+","+q+");'>-1</a> | <a onclick='addFace(1,"+h[q-1]+","+q+");'>+1</a>  <a onclick='addFace(-1,"+h[q-1]+","+q+");'>-1</a> | <a onclick='addMod(1,"+h[q-1]+","+q+");'>+1</a>  <a onclick='addMod(-1,"+h[q-1]+","+q+");'>-1</a></h4><br>"; break;
+      case -1: deletMore(q); break;
       default: alert("...how?!");
    }
-   document.getElementById("re").innerHTML = h;
+   document.getElementById(q+"re").innerHTML = h[q-1];
 }
 
-function deletMore()
+function deletMore(q)
 {
-   if(h>1)
+   if(h[q-1]>1)
    {
-      h--;
-      var splitTime = document.getElementById("addStuff").innerHTML.split('<!---->');
+      h[q-1]--;
+      var splitTime = document.getElementById(q+"addStuff").innerHTML.split('<!---->');
       var out = splitTime[0];
-      for(var i = 1; i < h; i++)
+      for(var i = 1; i < h[q-1]; i++)
       {
          out = out + "<!---->" + splitTime[i];
       }
-      if(h>1)
+      if(h[q-1]>1)
       {
-         document.getElementById("addStuff").innerHTML = out;
+         document.getElementById(q+"addStuff").innerHTML = out;
       }
       else
       {
-         document.getElementById("addStuff").innerHTML = "";
+         document.getElementById(q+"addStuff").innerHTML = "";
       }
    }
 }
