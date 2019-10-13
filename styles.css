@@ -6,8 +6,185 @@ div #extremeWack {
    display: block;
 }
 
-div .dice{
+.dice {
    display: block;
-   width: 25%;
+   width: 175px;
    float: left;
+   background-color: #23272A;
+   border-color: color: #99AAB5;
+   border-width: 3px;
+   border-style: solid;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-left: 5px;
+   margin-right: 5px;
+   margin-bottom: 3px;
 }
+
+br {
+    display: block;
+    content: "";
+    line-height: 100%;
+    /*margin-top: 20px;*/
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+
+body {
+    background-color: #2C2F33;
+    color: #99AAB5;
+    cursor: default;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+h1 { /*Shitty Dice Roller.exe*/
+
+}
+
+h2 { /*Roll Time*/
+
+}
+
+h3 { /*1d20 +0*/
+
+}
+
+h4 { /*+1 -1*/
+
+}
+
+h5 { /*g e n e r a t e*/
+    text-align: center;
+    border-color: color: #99AAB5;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+    margin:0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h5:hover {
+    background-color: #2C2F33;
+    cursor: pointer;
+}
+
+h5:active {
+    background-color: #ffffff;
+}
+
+h6 { /*Add More Add Less*/
+    text-align: center;
+    border-color: color: #99AAB5;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h6:hover {
+    background-color: #2C2F33;
+    cursor: pointer;
+}
+
+h6:active {
+    background-color: #ffffff;
+}
+
+.delet { /*Remove Dice Set*/
+    text-align: center;
+    border-color: color: #99AAB5;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.delet:hover {
+    background-color: #2C2F33;
+    cursor: pointer;
+}
+
+.delet:active {
+    background-color: #ffffff;
+}
+
+.deletnt { /*Removen't Dice Set*/
+    padding-bottom: 6px;
+    padding-top: 6px;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 50px;
+}
+
+#why:hover {
+    background-color: #2C2F33;
+    cursor: pointer;
+}
+
+#why:active {
+    background-color: #ffffff;
+}
+
+.point:hover {
+    cursor: pointer;
+}
+
+.pointer:active { /*not working re*/
+    color: #ffffff;
+}
+
+/*h1 {
+         text-align: center;
+         font-family: Impact;
+         font-weight: normal;
+         font-size: 80px;
+         color: #99AAB5;
+         -webkit-text-stroke: 3.5px black;
+      }
+      body {
+         background-color: #2C2F33;
+      }
+      audio {
+         width: 90%;
+         padding-left: 5%;
+         padding-right: 5%;
+         display: block;
+      }
+      h2 {
+         font-family: Verdana;
+         font-size: 200%;
+         color: #99AAB5;
+      }
+      h3 {
+         font-family: Verdana;
+         font-size: 150%;
+         color: #7289DA;
+      }
+      li {
+         font-size: 107%;
+      }
+      a {
+         color: #7289DA;
+      }
+      div {
+         margin-right: 0.5%;
+         margin-left: 0.5%;
+         border-width: 13px;
+         border-color: blue;
+         border-left-style: solid;
+         background-color: #7289DA;
+      }*/
